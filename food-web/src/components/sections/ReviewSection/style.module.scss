@@ -1,0 +1,45 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/mixins.scss";
+
+.review {
+  @include mixins.flex-col;
+  & .heading {
+    @include mixins.title;
+  }
+  & .boxContainer {
+    @include mixins.flex-wrap;
+    & .box {
+      text-align: center;
+      padding: 0.5rem;
+      border: 1rem solid variables.$white;
+      box-shadow: 0 0.5rem 1rem variables.$second-black-opacity;
+      border-radius: 0.5rem;
+      flex: 1 1 30rem;
+      background: variables.$dark-chacoal;
+      margin-top: 6rem;
+      & img {
+        height: 12rem;
+        width: 12rem;
+        border-radius: 50%;
+        border: 1rem solid variables.$white;
+        margin-top: -8rem;
+        object-fit: cover;
+      }
+      & h2 {
+        font-size: 2.5rem;
+        color: variables.$white;
+        padding: 0.5rem 0;
+      }
+      & .stars {
+        color: variables.$gold;
+        font-size: 2rem;
+        padding: 0.5rem 0.2rem;
+      }
+      & p {
+        font-size: 1.5rem;
+        color: variables.$very-light-gray;
+        padding: 1rem 0;
+      }
+    }
+  }
+}

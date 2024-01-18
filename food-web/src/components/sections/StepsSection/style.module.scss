@@ -1,0 +1,28 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/mixins.scss";
+
+.steps {
+  padding: 0;
+  & .heading {
+    @include mixins.title;
+  }
+  & .stepsContainer {
+    @include mixins.flex-wrap;
+    padding: 1rem;
+    & .box {
+      flex: 1 1 25rem;
+      padding: 1rem;
+      text-align: center;
+      & img {
+        border-radius: 50%;
+        border: 1rem solid variables.$white;
+        box-shadow: 0 0.5rem 1rem variables.$black-opacity;
+      }
+      & h2 {
+        font-size: 3rem;
+        color: variables.$dark-chacoal;
+        padding: 1rem;
+      }
+    }
+  }
+}

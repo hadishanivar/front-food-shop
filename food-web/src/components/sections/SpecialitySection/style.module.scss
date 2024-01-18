@@ -1,0 +1,53 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/mixins.scss";
+
+.speciality {
+  @include mixins.flex-col;
+  & .heading {
+    @include mixins.title;
+  }
+  & .boxContainer {
+    @include mixins.flex-wrap;
+    & .box {
+      display: flex;
+      flex: 1 1 30rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0.5rem 1rem variables.$black-opacity;
+      border: 1rem solid variables.$second-black-opacity;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      &:hover .image {
+        top: 0;
+      }
+      & .image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: -100%;
+        left: 0;
+      }
+      &:hover .content {
+        transform: translateY(100%);
+      }
+      & .content {
+        text-align: center;
+        background: variables.$white;
+        padding: 2rem;
+        & img {
+          margin: 1.5rem 0;
+        }
+        & h2 {
+          font-size: 2.5rem;
+          color: variables.$dark-chacoal;
+        }
+        & p {
+          font-size: 1.6rem;
+          color: variables.$medium-dark-gray;
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+}

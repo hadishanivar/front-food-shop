@@ -1,0 +1,44 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/mixins.scss";
+
+.home {
+  @include mixins.flex-wrap;
+  min-height: 100vh;
+  align-items: center;
+  background: url(/home-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  & .content {
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+    & h2 {
+      font-size: 5rem;
+      color: variables.$dark-chacoal;
+    }
+    & p {
+      font-size: 1.9rem;
+      color: variables.$medium-dark-gray;
+      padding: 1rem 0;
+    }
+  }
+  & .image {
+    flex: 1 1 40rem;
+    & img {
+      width: 100%;
+      padding: 1rem;
+      animation: float 3s linear infinite;
+    }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(3rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}

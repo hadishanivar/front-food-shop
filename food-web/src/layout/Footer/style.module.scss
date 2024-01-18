@@ -1,0 +1,24 @@
+@use "../../styles/variables.scss";
+@use "../../styles/mixins.scss";
+
+.footer {
+  padding: 2rem 9%;
+  background: variables.$black;
+  text-align: center;
+  & button {
+    background: variables.$black;
+  }
+  & .share {
+    @include mixins.flex-wrap;
+    justify-content: center;
+  }
+  & .credit {
+    padding: 2.5rem 1rem;
+    color: variables.$white;
+    font-weight: normal;
+    font-size: 2rem;
+    & span {
+      color: variables.$medium-light-red;
+    }
+  }
+}

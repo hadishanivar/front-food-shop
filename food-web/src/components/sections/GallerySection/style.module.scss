@@ -1,0 +1,48 @@
+@use "../../../styles/variables.scss";
+@use "../../../styles/mixins.scss";
+
+.gallery {
+  @include mixins.flex-col;
+  & .heading {
+    @include mixins.title;
+  }
+  & .boxContainer {
+    @include mixins.flex-wrap;
+    & .box {
+      height: 25rem;
+      flex: 1 1 30rem;
+      border: 1rem solid variables.$white;
+      box-shadow: 0 0.5rem 1rem variables.$black-opacity;
+      border-radius: 0.5rem;
+      position: relative;
+      overflow: hidden;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &:hover .content {
+        top: 0;
+      }
+      & .content {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: variables.$white-opacity;
+        padding-top: 5rem;
+        text-align: center;
+        & h2 {
+          font-size: 2.5rem;
+          color: variables.$dark-chacoal;
+        }
+        & p {
+          font-size: 1.5rem;
+          color: variables.$medium-dark-gray;
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+}

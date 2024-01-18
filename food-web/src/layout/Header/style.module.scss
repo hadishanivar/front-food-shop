@@ -1,0 +1,72 @@
+@use "../../styles/variables.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: variables.$white;
+  padding: 2rem 9%;
+  box-shadow: 0.5rem 1rem variables.$black-opacity;
+  @media screen and (max-width: 991px) {
+    padding: 2rem;
+  }
+  & .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: variables.$medium-dark-gray;
+    & svg {
+      color: variables.$medium-light-red;
+      margin-right: 5rem;
+    }
+  }
+  & .menuBar {
+    font-size: 3rem;
+    cursor: pointer;
+    color: variables.$medium-dark-gray;
+    border: 0.1rem solid variables.$medium-dark-gray;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.5rem;
+    display: none;
+    & svg {
+      display: flex;
+    }
+    @media screen and (max-width: 768px) {
+      display: inline-block;
+    }
+  }
+  & .navbar {
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: variables.$earthborn-bugle;
+      border-top: 0.3rem solid variables.$black-opacity;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    & a {
+      font-size: 2rem;
+      margin-left: 2rem;
+      @media screen and (max-width: 768px) {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: 0.2rem solid variables.$black-opacity;
+        border-left: 0.5rem solid variables.$medium-light-red;
+        background: variables.$white;
+      }
+      color: variables.$medium-dark-gray;
+      &:hover {
+        color: variables.$medium-light-red;
+      }
+    }
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}
